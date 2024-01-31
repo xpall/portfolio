@@ -660,6 +660,7 @@ textarea {
         padding: 3.5rem 0; } }
 
 .skills {
+  /* justify-content: center; */
   display: flex;
   flex-wrap: wrap; }
   .skills__skill {
@@ -702,3 +703,15 @@ textarea {
   to {
     opacity: 0;
     top: 27px; } }
+
+.skills__skill img {
+  display: flex;
+  min-width: 40px;
+  max-width: 40px;
+  margin: auto;
+}
+
+.skills__skill p {
+  display: flex;
+  justify-content: center;
+}
