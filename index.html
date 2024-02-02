@@ -305,12 +305,12 @@
           </span>
         </h2>
         <div class="contact__form-container">
-          <form action="#" class="contact__form">
+          <form id="myForm" class="contact__form" action="https://submit-form.johnlloyd-dev.workers.dev/" method="POST">
             <div class="contact__form-field">
               <label class="contact__form-label" for="name">Name</label>
               <input
                 required
-                placeholder="Enter Your Name"
+                placeholder="Your Name"
                 type="text"
                 class="contact__form-input"
                 name="name"
@@ -321,10 +321,11 @@
               <label class="contact__form-label" for="email">Email</label>
               <input
                 required
-                placeholder="Enter Your Email"
+                placeholder="Your Email"
                 type="text"
                 class="contact__form-input"
                 name="email"
+                type="email"
                 id="email"
               />
             </div>
@@ -335,12 +336,11 @@
                 cols="30"
                 rows="10"
                 class="contact__form-input"
-                placeholder="Enter Your Message"
+                placeholder="How can I help you?"
                 name="message"
                 id="message"
               ></textarea>
             </div>
-            <a href="mailto:contact@johnlloyd.dev">
             <button type="submit" class="btn btn--theme contact__btn">
               Submit
             </button>
@@ -414,7 +414,7 @@
         </div>
       </div>
     </footer>
-
-    <script src="./index.js"></script>
+    <script src="/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </body>
 </html>
