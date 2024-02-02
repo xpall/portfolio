@@ -715,3 +715,7 @@ textarea {
   display: flex;
   justify-content: center;
 }
+
+.project-picture {
+  border-style: solid;
+}
