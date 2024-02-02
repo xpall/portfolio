@@ -718,4 +718,31 @@ textarea {
 
 .project-picture {
   border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+  border-color: #0062b9;
+  transition: transform .25s;
+}
+
+.project-picture:hover {
+  transform: scale(.99); 
+}
+
+.overlay-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the overlay icon on hover */
+.hover-container:hover .overlay-icon {
+  opacity: 1;
+}
+
+.hover-container {
+  position: relative;
+  display: inline-block;
 }
