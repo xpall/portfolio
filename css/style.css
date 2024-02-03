@@ -152,7 +152,8 @@ textarea {
     padding: 1.5rem 8rem;
     font-size: 2rem; }
   .btn--med {
-    padding: 1.5rem 5rem;
+    /* padding: 1.5rem 5rem; */
+    padding: 1.5rem 2.5rem;
     font-size: 1.6rem; }
   .btn--theme {
     background: #0062b9;
@@ -726,4 +727,12 @@ textarea {
 
 .project-picture:hover {
   transform: scale(.99); 
+}
+
+.fast-live-link {
+  display: flex;
+}
+
+.fast-live-link > a {
+  margin: 0.5rem;
 }
