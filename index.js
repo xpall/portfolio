@@ -60,20 +60,19 @@ emailInput.addEventListener('input', () => {
 // Handle form submission
 const form = document.getElementById('myForm');
 form.addEventListener('submit', (e) => {
-  // Prevent form submission if email is invalid
   if (!emailRegex.test(emailInput.value)) {
+    // Prevent form submission if email is invalid
     e.preventDefault();
     emailError.textContent = 'Please enter a valid email address.';
   } else {
+    // Ensure email is valid, clear any error, and allow form submission
     emailError.textContent = '';
-    // Display success notification
-    showSuccessMessage();
-    // Optionally, reset the form
-    form.reset();
+    console.log('Form is valid and ready for submission.');
+    // Form will be submitted naturally without any explicit call to `form.submit()`
   }
 });
 
-// Function to display success notification
+// Function to display success notification (optional if not used elsewhere)
 function showSuccessMessage() {
   const successMessage = document.getElementById('successMessage');
   successMessage.textContent = 'Your message has been sent successfully!';
