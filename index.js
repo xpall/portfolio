@@ -66,7 +66,23 @@ form.addEventListener('submit', (e) => {
     emailError.textContent = 'Please enter a valid email address.';
   } else {
     emailError.textContent = '';
-    // Let the form submit as normal
-    // Do not reset the form or prevent default submission here
+  }
+
+  // Ensure all form fields are filled correctly
+  const formData = new FormData(form);
+  let formValid = true;
+
+  for (const [key, value] of formData.entries()) {
+    if (!value.trim()) {
+      formValid = false;
+      alert(`Please fill out the ${key} field.`);
+      e.preventDefault();
+      break;
+    }
+  }
+
+  if (formValid) {
+    // Form is valid, allow submission
+    console.log('Form data:', Object.fromEntries(formData));
   }
 });
