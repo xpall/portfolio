@@ -373,7 +373,7 @@
         </div>
       </div>
     </section>
-    <section id="contact" class="contact sec-pad dynamicBg">
+   <section id="contact" class="contact sec-pad dynamicBg">
       <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-med">
           <span class="heading-sec__main heading-sec__main--lt">Contact</span>
@@ -382,6 +382,9 @@
           </span>
         </h2>
         <div class="contact__form-container">
+          <!-- Success Message -->
+          <div id="successMessage" class="contact__form-success"></div>
+          <!-- Contact Form -->
           <form id="myForm" class="contact__form" action="https://submit.johnlloyd.dev/" method="POST">
             <div class="contact__form-field">
               <label class="contact__form-label" for="name">Name</label>
@@ -389,11 +392,11 @@
             </div>
             <div class="contact__form-field">
               <label class="contact__form-label" for="email">Email</label>
-              <input required placeholder="Your Email" type="text" class="contact__form-input" name="email" type="email" id="email"/>
+              <input required placeholder="Your Email" class="contact__form-input" name="email" type="email" id="email"/>
             </div>
             <div class="contact__form-field">
               <label class="contact__form-label" for="message">Message</label>
-              <textarea requiredcols="30" rows="10" class="contact__form-input" placeholder="How can I help you?" name="message" id="message"></textarea>
+              <textarea required cols="30" rows="10" class="contact__form-input" placeholder="How can I help you?" name="message" id="message"></textarea>
             </div>
             <button type="submit" class="btn btn--theme contact__btn">Submit</button>
           </form>

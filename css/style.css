@@ -736,3 +736,17 @@ textarea {
 .fast-live-link > a {
   margin: 0.5rem;
 }
+
+.contact__form-error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: block;
+}
+
+.contact__form-success {
+  color: green;
+  font-size: 1em;
+  margin-bottom: 15px;
+  display: none;
+}
