@@ -73,6 +73,7 @@ form.addEventListener('submit', (e) => {
   let formValid = true;
 
   for (const [key, value] of formData.entries()) {
+    if (key === 'Purpose') continue;
     if (!value.trim()) {
       formValid = false;
       alert(`Please fill out the ${key} field.`);

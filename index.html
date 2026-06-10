@@ -489,6 +489,10 @@
               <label class="contact__form-label" for="message">Message</label>
               <textarea required cols="30" rows="10" class="contact__form-input" placeholder="How can I help you?" name="message" id="message"></textarea>
             </div>
+            <div class="contact__form-field contact__form-honeypot" aria-hidden="true">
+              <label class="contact__form-label" for="purpose">Purpose</label>
+              <input type="text" class="contact__form-input" name="Purpose" id="purpose" tabindex="-1" autocomplete="off" value="" />
+            </div>
             <button type="submit" class="btn btn--theme contact__btn">Submit</button>
           </form>
         </div>
