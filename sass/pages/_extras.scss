@@ -1,0 +1,89 @@
+.extras-hero {
+  color: #fff;
+  background: linear-gradient(
+      to right,
+      rgba($themeClrPrimary, 0.8),
+      rgba($themeClrPrimary, 0.8)
+    ),
+    url(../../assets/svg/common-bg.svg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  @include respond(phone) {
+    height: unset;
+    min-height: unset;
+  }
+
+  &__content {
+    padding: 25rem 0 17rem 0;
+    max-width: 90rem;
+    width: 92%;
+    margin: auto;
+
+    @include respond(phone) {
+      padding: 19rem 0 13rem 0;
+      margin: auto;
+      position: static;
+      transform: translate(0, 0);
+    }
+  }
+
+  &__info {
+    margin: 3rem auto 0 auto;
+    max-width: 80rem;
+  }
+}
+
+.extras-details {
+  padding: 8rem 0;
+
+  &__content {
+    max-width: 90rem;
+    margin: auto;
+  }
+
+  &__card {
+    margin-bottom: 7rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-title {
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    @include respond(phone) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: $commonBorderRadius;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  &__pdf {
+    width: 100%;
+    height: 80rem;
+    border: 1px solid #ddd;
+    border-radius: $commonBorderRadius;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    @include respond(phone) {
+      height: 50rem;
+    }
+  }
+
+  &__pdf-fallback {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: $themeClrPrimary;
+    text-decoration: underline;
+  }
+}

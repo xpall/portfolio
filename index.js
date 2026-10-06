@@ -41,49 +41,53 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Get references to the email input and form
 const emailInput = document.getElementById('email');
-const emailError = document.createElement('span');
-emailError.classList.add('contact__form-error');
-
-// Insert the error message span after the email input
-emailInput.parentNode.insertBefore(emailError, emailInput.nextSibling);
-
-// Real-time email validation
-emailInput.addEventListener('input', () => {
-  const email = emailInput.value;
-  if (!emailRegex.test(email)) {
-    emailError.textContent = 'Please enter a valid email address.';
-  } else {
-    emailError.textContent = '';
-  }
-});
-
-// Handle form submission
 const form = document.getElementById('myForm');
-form.addEventListener('submit', (e) => {
-  // Prevent form submission if email is invalid
-  if (!emailRegex.test(emailInput.value)) {
-    e.preventDefault();
-    emailError.textContent = 'Please enter a valid email address.';
-  } else {
-    emailError.textContent = '';
-  }
 
-  // Ensure all form fields are filled correctly
-  const formData = new FormData(form);
-  let formValid = true;
+// Contact form logic only applies on pages that include the form
+if (emailInput && form) {
+  const emailError = document.createElement('span');
+  emailError.classList.add('contact__form-error');
 
-  for (const [key, value] of formData.entries()) {
-    if (key === 'Purpose') continue;
-    if (!value.trim()) {
-      formValid = false;
-      alert(`Please fill out the ${key} field.`);
-      e.preventDefault();
-      break;
+  // Insert the error message span after the email input
+  emailInput.parentNode.insertBefore(emailError, emailInput.nextSibling);
+
+  // Real-time email validation
+  emailInput.addEventListener('input', () => {
+    const email = emailInput.value;
+    if (!emailRegex.test(email)) {
+      emailError.textContent = 'Please enter a valid email address.';
+    } else {
+      emailError.textContent = '';
     }
-  }
+  });
 
-  if (formValid) {
-    // Form is valid, allow submission
-    console.log('Form data:', Object.fromEntries(formData));
-  }
-});
+  // Handle form submission
+  form.addEventListener('submit', (e) => {
+    // Prevent form submission if email is invalid
+    if (!emailRegex.test(emailInput.value)) {
+      e.preventDefault();
+      emailError.textContent = 'Please enter a valid email address.';
+    } else {
+      emailError.textContent = '';
+    }
+
+    // Ensure all form fields are filled correctly
+    const formData = new FormData(form);
+    let formValid = true;
+
+    for (const [key, value] of formData.entries()) {
+      if (key === 'Purpose') continue;
+      if (!value.trim()) {
+        formValid = false;
+        alert(`Please fill out the ${key} field.`);
+        e.preventDefault();
+        break;
+      }
+    }
+
+    if (formValid) {
+      // Form is valid, allow submission
+      console.log('Form data:', Object.fromEntries(formData));
+    }
+  });
+}
