@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700;800&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ------------------------------------------------------------------
+         Social share card - 1200 x 630 (Open Graph / Twitter large image)
+         Light theme: white card, blue frame, blue text accents.
+         Rendered to PNG by scripts/generate-og.mjs
+         ------------------------------------------------------------------ */
+      :root {
+        --blue: #0062b9;
+        --blue-dark: #00407e;
+        --blue-bright: #0072d6;
+        --ink: #0f2a44;
+        --slate: #3a5673;
+        --muted: #5b7794;
+        --tint: #eaf2fb;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 1200px;
+        height: 630px;
+        font-family: "Source Sans Pro", sans-serif;
+        background: #ffffff;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      .card {
+        position: relative;
+        box-sizing: border-box;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #ffffff;
+        border: 18px solid var(--blue);
+      }
+
+      /* Soft blue glow in the top-right behind the photo */
+      .card::before {
+        content: "";
+        position: absolute;
+        top: -170px;
+        right: -140px;
+        width: 540px;
+        height: 540px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 40% 40%,
+          rgba(0, 98, 185, 0.12),
+          rgba(0, 98, 185, 0) 70%
+        );
+      }
+
+      /* Faint blue dot grid */
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(0, 98, 185, 0.16) 1.6px,
+          transparent 1.6px
+        );
+        background-size: 34px 34px;
+        opacity: 0.6;
+        -webkit-mask-image: linear-gradient(110deg, transparent 34%, #000 78%);
+        mask-image: linear-gradient(110deg, transparent 34%, #000 78%);
+      }
+
+      .card__body {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        padding: 0 72px;
+      }
+
+      /* ---------------------------- Left column --------------------------- */
+      .card__left {
+        max-width: 620px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.42em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+
+      .name {
+        margin: 0 0 16px;
+        font-family: "Roboto Slab", serif;
+        font-weight: 800;
+        font-size: 88px;
+        line-height: 1;
+        letter-spacing: -0.5px;
+        color: var(--ink);
+      }
+
+      .tagline {
+        margin: 0 0 28px;
+        font-size: 31px;
+        font-weight: 700;
+        color: var(--blue);
+      }
+
+      .divider {
+        width: 96px;
+        height: 5px;
+        margin-bottom: 32px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--blue), #8cc2ef);
+      }
+
+      .details {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .details li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 25px;
+        font-weight: 600;
+        color: var(--slate);
+      }
+
+      .details svg {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 auto;
+        color: var(--blue);
+      }
+
+      /* --------------------------- Right column --------------------------- */
+      .card__right {
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .photo-wrap {
+        position: relative;
+        width: 350px;
+        height: 452px;
+      }
+
+      .photo-card {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        border-radius: 26px;
+        border: 5px solid rgba(0, 98, 185, 0.9);
+        background: var(--tint);
+        box-shadow: 0 30px 52px -14px rgba(6, 50, 95, 0.38);
+        /* Tilted a touch to the left for a business-card feel */
+        transform: rotate(-5deg);
+      }
+
+      /* Ghost card peeking out behind, tilted further */
+      .photo-card--behind {
+        border: 2px solid rgba(0, 98, 185, 0.35);
+        background: rgba(0, 98, 185, 0.07);
+        box-shadow: none;
+        transform: rotate(-10deg) translate(-6px, 6px);
+      }
+
+      /* Crop the square source into a head-and-shoulders portrait */
+      .photo-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 0%;
+        transform: scale(1);
+        transform-origin: 50% 6%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <main class="card__body">
+        <div class="card__left">
+          <span class="eyebrow">Portfolio</span>
+          <h1 class="name">John Lloyd</h1>
+          <p class="tagline">n8n &middot; Python &middot; Linux &middot; Problem&nbsp;Solver</p>
+          <div class="divider"></div>
+          <ul class="details">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18" />
+                <path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z" />
+              </svg>
+              <span>johnlloyd.dev</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
+                <path d="m3 6.5 9 6.5 9-6.5" />
+              </svg>
+              <span>contact@johnlloyd.dev</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z" />
+                <circle cx="12" cy="10" r="2.6" />
+              </svg>
+              <span>Laguna, Philippines</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card__right">
+          <div class="photo-wrap">
+            <div class="photo-card photo-card--behind"></div>
+            <div class="photo-card">
+              <img src="../assets/png/headshot.webp" alt="John Lloyd" />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
