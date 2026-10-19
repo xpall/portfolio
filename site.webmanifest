@@ -1,0 +1,24 @@
+{
+  "name": "John Lloyd - Portfolio",
+  "short_name": "John Lloyd",
+  "description": "Passionate about science, education, and technology. My interests lie in tech and biology.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0062b9",
+  "icons": [
+    {
+      "src": "/assets/ico/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/ico/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
