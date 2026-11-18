@@ -32,7 +32,7 @@ for (let i = 0; i < headerSmallMenuLinks.length; i++) {
 const headerLogoContainer = document.querySelector('.header__logo-container')
 
 headerLogoContainer.addEventListener('click', () => {
-  location.href = 'index.html'
+  location.href = '/'
 })
 
 
